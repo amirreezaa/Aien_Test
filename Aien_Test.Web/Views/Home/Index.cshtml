@@ -1,0 +1,42 @@
+﻿@model List<ContractList>
+@{
+    ViewData["Title"] = "Home Page";
+    int row = 0;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Contract List</p>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">StartDate</th>
+                    <th scope="col">EndDate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                        row++;
+                    <tr>
+                        <th scope="row" @row></th>
+                        <td>@item.Name</td>
+                        <td>@item.Code</td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
